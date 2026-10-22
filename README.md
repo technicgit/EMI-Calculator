@@ -1,6 +1,6 @@
-# EMI Calculator
+EMI Calculator
 
-A Java console program created for a Day 3 QA Automation Bootcamp assignment. It estimates the equated monthly installment (EMI), or monthly payment, for a fixed interest loan using the amount borrowed, annual interest rate, and duration.
+A Java console application that estimates the equated monthly installment (EMI), or monthly payment, for a fixed interest loan using the amount borrowed, annual interest rate, and duration.
 
 ## Features
 
@@ -56,7 +56,7 @@ double interestPercentage = totalInterest / totalRepayment * 100;
 
 The displayed percentages show each amount's share of total repayment. The interest percentage in the summary is different from the annual interest rate entered by the user. Formatting rounds only the displayed values.
 
-## Java Concepts Practiced
+## Implementation Details
 
 - Variables, `double`, and `int`.
 - Console input with `Scanner`, `nextDouble()`, and `nextInt()`.
@@ -67,17 +67,18 @@ The displayed percentages show each amount's share of total repayment. The inter
 - Format specifiers: `%.2f` for two decimal places, `%.1f` for one decimal place, `%%` for a percent sign, and `%n` for a new line.
 - Closing the scanner after collecting input.
 
-## How to Run in Eclipse
+## How to Run
 
-You need a Java Development Kit (JDK) configured in Eclipse IDE for Java Developers. No external libraries are required.
+Requires a Java Development Kit (JDK), with `java` and `javac` available in your terminal. No external libraries are required.
 
-1. Open your Java project in Eclipse.
-2. Create a package named `day3` under the source folder if it does not already exist.
-3. Save the source code in that package as `EMICalculator.java`. The file must begin with `package day3;`.
-4. Right-click `EMICalculator.java` and select **Run As > Java Application**.
-5. Enter the loan amount and annual interest rate, pressing Enter after each value.
-6. Select `1` for years or `2` for months, then enter the duration.
-7. Read the loan summary in the Console.
+From the directory containing `EMICalculator.java`, compile and run:
+
+```sh
+javac -d out EMICalculator.java
+java -cp out day3.EMICalculator
+```
+
+The run command uses the package declared in the source file. Enter the loan amount and annual interest rate, then select `1` for years or `2` for months and enter the duration. Press Enter after each value to proceed to the loan summary.
 
 ## Example
 
@@ -116,3 +117,4 @@ These are expected results to check when running the program, not a record of ex
 - Uses `double` arithmetic and unrounded payments for totals. Multiplying the displayed monthly payment by the number of payments may differ slightly from the displayed total repayment.
 - Does not impose upper input limits; extremely large durations or rates can exceed the calculation's numeric range.
 - The current validation message says "Loan amount and years must be positive." This also applies when the selected duration is in months.
+
